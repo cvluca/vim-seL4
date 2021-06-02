@@ -11,6 +11,10 @@
 "      au BufRead,BufNewFile *.camkes setfiletype camkes
 "  augroup END
 
+if exists("b:current_syntax")
+  finish
+endif
+
 syn match CamkesCPP "^[ \t]*#.*$"
 syn keyword CamkesKeyword assembly composition from to configuration control
     \ procedure hardware maybe dma_pool has mutex semaphore binary_semaphore group tcb_pool
